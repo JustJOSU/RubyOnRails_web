@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+  </head>
+  <body>
+    <div class="container top-padding">
+        <% @category.each do |category| %>
+    	<div class="container">
+    		<h3 class="my-4"><%= category.category_name%></h3>
+    	  <div class="row">
+            <% category.cs_list.each do |service| %>
+                <% if service.category_id == category.id %>
+    	           <div class="col-lg-4 col-sm-6 mb-4">
+                        <div class="card h-100">
+                            <a href="#"><img class="card-img-top" src="http://placehold.it/300x200" alt></a>
+                            <div class="card-body">
+                                <h4 class="card-title"><%= link_to service.service_name, service_path(service.id) %></h4>
+                                <p class="card-text"><%= service.price %> 원</p>
+                            </div>
+                        </div>
+    	           </div>
+                <% else %>
+                <% end %>
+            <% end %>
+    	  </div>
+    	</div>
+        <% end %>
+    </div>
+  </body>
+</html>

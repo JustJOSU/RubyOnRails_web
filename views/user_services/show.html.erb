@@ -1,0 +1,66 @@
+<div class="container top-padding">
+  <div class="row">
+    <div class="col-sm-4">
+      <h1>마이페이지</h1>
+      <%= link_to '서비스 생성', new_service_path %>
+    </div>
+    <div class="col-sm-8">
+      <div class="row">
+        <div class="col">
+          <h4>구매개수 <%= @user_service.size %> </h4>
+        </div>
+        <div class="col">
+          <h4>판매중인 상품 개수 <%= @sell_list.size %> </h4>
+        </div>
+      </div>
+      <div>
+        <table class="table table-hover">
+          <thead>
+            <h3>구매목록</h3>
+            <tr>
+              <th scope="col">서비스명</th>
+              <th scope="col">가격</th>
+              <th scope="col">판매자</th>
+              <th scope="col">구매날짜</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <% @user_service.each do |user_service| %>
+              <tr>
+                <td><%= link_to user_service.Service_name, service_path(user_service.returnService) %></td>
+                <td><%= user_service.Service_price %></td>
+                <td><%= user_service.seller_name %></td>
+                <td><%= user_service.created_at %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+
+      <div>
+        <table class="table table-hover">
+          <thead>
+            <h3>판매목록</h3>
+            <tr>
+              <th scope="col">서비스 이름</th>
+              <th scope="col">서비스 가격</th>
+              <th scope="col">판매 개수</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <% @sell_list.each do |sell_list| %>
+              <tr>
+                <td><%= link_to sell_list.service_name, service_path(sell_list.id) %></td>
+                <td><%= sell_list.price %></td>
+                <td><%= sell_list.Sell_count %></td>
+                <td><%= link_to 'Destroy', sell_list, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

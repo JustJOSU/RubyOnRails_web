@@ -1,0 +1,36 @@
+<div class="container top-padding">
+	<div class="row">
+		<div class="col-sm-8">
+			<img class="img-fluid" src="http://placehold.it/700x450" alt="">
+		</div>
+		<div class="col-sm-4">
+			<h1 class="my-4"><%= @service.service_name %></h1>
+			<p>
+			  <strong>가격 : </strong>
+			  <%= @service.price %> 원
+			</p>
+
+			<p>
+			  <strong>카테고리 : </strong>
+			  <%= Category.find_by_id(@service.category_id).category_name %>
+			</p>
+
+			<p>
+			  <strong>판매자 : </strong>
+			  <%= User.find_by_id(@service.user_id).email %>
+			</p>
+			<p>
+				<% if user_signed_in? %>
+					<%= button_to '구매하기', buy_service_path(current_user.id, @service.id), method: :post %>
+				<% else %>
+					<%= button_to '구매하기', new_user_session_path %>
+				<% end %>
+			</p>
+		</div>
+	</div>
+	<div class="top-padding">
+		<h3>서비스후기</h3>
+		<div>
+		</div>
+	</div>
+</div>

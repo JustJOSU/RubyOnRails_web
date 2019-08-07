@@ -1,0 +1,8 @@
+<div class="container">
+	<h1>서비스 생성</h1>
+</div>
+
+<%= render 'form', service: @service %>
+<div class="container">
+	<%= link_to '돌아가기', user_service_path(current_user.id) %>
+</div>

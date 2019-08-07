@@ -1,0 +1,23 @@
+<div class="container top-padding">
+  <div class="row">
+    <div class="col-sm-4">
+      <h1><%= @category.category_name %></h1>
+    </div>
+    <div class="col-sm-8">
+      <div class="row">
+      <% @services.each do |service| %>
+        <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+          <div class="card h-100">
+            <a href="#"><img class="card-img-top" src="http://placehold.it/140x100" alt></a>
+             <div class="card-body">
+               <h4 class="card-title"><%=link_to service.service_name, service_path(service.id) %></h4>
+               <p class="card-text">가격 : <%= service.price %> 원 </p>
+               <p class="card-text">판매자 : <%= service.returnEmail %></p>
+             </div>
+          </div>
+        </div>
+      <% end %>
+      </div>
+    </div>
+  </div>  
+</div>

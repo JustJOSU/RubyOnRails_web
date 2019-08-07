@@ -1,0 +1,15 @@
+  <%= form_with(model: user_service, local: true) do |form| %>
+  <div class="field">
+    <%= form.label :user_id %>
+    <%= form.text_field :user_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :service_id %>
+    <%= form.text_field :service_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
