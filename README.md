@@ -6,3 +6,11 @@
 
 # DB 설계
 
+![db_struct](https://user-images.githubusercontent.com/29748479/62670510-78a52080-b9ce-11e9-8d12-31968fd23d03.png)
+
+- 회원관리, 판매 및 구매내역 관리, 카테고리, 상품등록을 위한 총 4개의 DB로 구성되어있습니다.
+- 판매 및 구매내역 관리를 위한 DB는 N:M의 관계로 설정되어 있습니다. 
+
+# FlowChart
+
+![flowchart](https://user-images.githubusercontent.com/29748479/62670716-1862ae80-b9cf-11e9-94b3-d459dadb26d2.png)
