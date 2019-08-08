@@ -14,3 +14,7 @@
 # FlowChart
 
 ![flowchart](https://user-images.githubusercontent.com/29748479/62670716-1862ae80-b9cf-11e9-94b3-d459dadb26d2.png)
+
+# 부록
+
+- 웹 제작에 대한 자세한 내용은 첨부한 MS word파일에서 확인할 수 있습니다.
